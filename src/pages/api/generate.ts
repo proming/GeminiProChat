@@ -2,7 +2,7 @@ import { startChatAndSendMessageStream } from '@/utils/openAI'
 import { verifySignature } from '@/utils/auth'
 import type { APIRoute } from 'astro'
 
-const sitePassword = import.meta.env.SITE_PASSWORD || ''
+const sitePassword = process.env.SITE_PASSWORD || ''
 const passList = sitePassword.split(',') || []
 
 export const post: APIRoute = async(context) => {
